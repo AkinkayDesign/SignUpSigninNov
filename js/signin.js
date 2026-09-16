@@ -22,7 +22,7 @@ signinForm.addEventListener("submit", async (e) => {
     document.cookie = `token=${data.token}; path=/`
 
     alert("Signin Successfully!!!");
-    window.location.href = "http://127.0.0.1:5500/index.html"
+    window.location.href = " https://akinkaydesign.github.io/new_project/"
     
   } catch (error) {
     console.log("Signin error", error);
