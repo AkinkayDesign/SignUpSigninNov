@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+}
+
+.auth-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fb, #e9eef8);
+}
+
+.auth-card {
+    background: #ffffff;
+    padding: 45px 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 800;
+    color: #111827;
+}
+
+.logo span {
+    color: #2563eb;
+}
+
+.auth-card h1 {
+    margin-top: 25px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.subtitle {
+    color: #6b7280;
+    margin-top: 8px;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #374151;
+}
+
+.input-group-text {
+    background: #f8fafc;
+    border-right: none;
+    color: #2563eb;
+}
+
+.form-control {
+    height: 50px;
+    border-left: none;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #dee2e6;
+}
+
+.input-group:focus-within .input-group-text {
+    border-color: #86b7fe;
+}
+
+.forgot-password {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.signin-btn {
+    height: 52px;
+    border: none;
+    border-radius: 10px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.signin-btn:hover {
+    background: #1d4ed8;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.switch-text {
+    color: #6b7280;
+}
+
+.switch-text a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.switch-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+
+    .auth-card {
+        padding: 35px 30px;
+    }
+
+    .auth-card h1 {
+        font-size: 27px;
+    }
+}
+
+
+/* Mobile */
+@media screen and (max-width: 576px) {
+
+    .auth-page {
+        padding: 20px 10px;
+    }
+
+    .auth-card {
+        padding: 30px 20px;
+        border-radius: 15px;
+    }
+
+    .logo {
+        font-size: 27px;
+    }
+
+    .auth-card h1 {
+        font-size: 24px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .form-control {
+        height: 47px;
+    }
+
+    .signin-btn {
+        height: 48px;
+    }
+
+    .forgot-password {
+        font-size: 12px;
+    }
+}
