@@ -36,15 +36,17 @@ signinForm.addEventListener("submit", async (e) => {
 });
 
 function showMessage(message, type) {
-    const messageDiv = document.createElement("div");
+  const messageDiv = document.createElement("div");
 
-    messageDiv.textContent = message;
-    messageDiv.className = `alert alert-${type}`;
-    messageDiv.style.marginTop = "15px";
+  messageDiv.textContent = message;
+  messageDiv.className = `alert alert-${type}`;
+  messageDiv.style.marginTop = "15px";
 
-    signinForm.prepend(messageDiv);
+  // signinForm.prepend(messageDiv);
+  signinForm.querySelectorAll(".alert").forEach((alert) => alert.remove());
+  signinForm.prepend(messageDiv);
 
-    setTimeout(() => {
-        messageDiv.remove();
-    }, 3000);
+  setTimeout(() => {
+    messageDiv.remove();
+  }, 3000);
 }
