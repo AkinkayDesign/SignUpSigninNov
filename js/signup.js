@@ -9,26 +9,46 @@ signupForm.addEventListener("submit", async (e) => {
   const confirmPassword = document.getElementById("confirmPassword").value;
 
   if (password !== confirmPassword) {
-    alert("passwords do not match");
+    showMessage("Passwords do not match", "danger");
     return;
   }
 
   try {
-    const response = await fetch("https://novatech-backend-mu4a.onrender.com/api/signup", {
-      method: "POST",
-      headers: { "content-Type": "application/json" },
-      body: JSON.stringify({ fullname, email, password }),
-    });
+    const response = await fetch(
+      "https://novatech-backend-mu4a.onrender.com/api/signup",
+      {
+        method: "POST",
+        headers: { "content-Type": "application/json" },
+        body: JSON.stringify({ fullname, email, password }),
+      },
+    );
 
     const data = await response.json();
     if (!response.ok) {
-      alert(data.message);
+      showMessage(data.message, "danger");
       return;
     }
-    alert("Successfull!");
-    window.location.href = "signin.html";
+    showMessage("Signup successful!", "success");
+
+    setTimeout(() => {
+      window.location.href = "signin.html";
+    }, 1500);
   } catch (error) {
     console.log(error);
-    alert("Unable to connect to the server");
+    showMessage("Unable to connect to the server", "danger");
   }
 });
+
+function showMessage(message, type) {
+    const messageDiv = document.createElement("div");
+
+    messageDiv.textContent = message;
+    messageDiv.className = `alert alert-${type}`;
+    messageDiv.style.marginTop = "15px";
+
+    signupForm.prepend(messageDiv);
+
+    setTimeout(() => {
+        messageDiv.remove();
+    }, 3000);
+}
